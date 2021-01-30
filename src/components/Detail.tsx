@@ -8,7 +8,7 @@ const Detail = () => {
   const [rest, setRest]: any = useState({});
   useEffect(() => {
     const myRequ = () => {
-      fetch(`http://localhost:3000/v1/onerestaurant/${id}`)
+      fetch(`https://my-server29-node.herokuapp.com/v1/onerestaurant/${id}`)
         .then((res) => res.json())
         .then((result) => setRest(result.data[0]))
         .catch((err) => console.log(err));

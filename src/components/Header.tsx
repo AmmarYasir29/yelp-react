@@ -18,7 +18,7 @@ const Header = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:3000/v1/addrestaurants", requestOptions)
+    fetch("https://my-server29-node.herokuapp.com/v1/addrestaurants", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         result.status && setOpen(true);
@@ -39,7 +39,7 @@ const Header = () => {
             onChange={(e) => setName(e.target.value)}
             type="text"
             className="form-control"
-            placeholder="Name"
+            placeholder="Restaurant Name"
           />
         </div>
         <div className="col">

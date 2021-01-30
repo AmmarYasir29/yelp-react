@@ -9,7 +9,7 @@ const Restauran = () => {
   let History = useHistory();
   useEffect(() => {
     const warringHandel = async () => {
-      return await fetch("http://localhost:3000/v1/restaurants")
+      return await fetch("https://my-server29-node.herokuapp.com/v1/restaurants")
         .then((result) => result.json())
         .then((res) => setRestaurant(res.data))
         .catch((err) => console.log(err));
@@ -23,7 +23,7 @@ const Restauran = () => {
       method: "DELETE",
       redirect: "follow",
     };
-    fetch(`http://localhost:3000/v1/Restaurants/${id}`, requestOptions)
+    fetch(`https://my-server29-node.herokuapp.com/v1/Restaurants/${id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));

@@ -10,7 +10,7 @@ const Update = () => {
   const [price, setPrice] = useState("");
   useEffect(() => {
     const myFetch = () => {
-      fetch(`http://localhost:3000/v1/onerestaurant/${id}`)
+      fetch(`https://my-server29-node.herokuapp.com/v1/onerestaurant/${id}`)
         .then((response) => response.json())
         .then((result) => {
           setName(result.data[0].name);
@@ -34,7 +34,10 @@ const Update = () => {
       redirect: "follow",
     };
 
-    fetch(`http://localhost:3000/v1/editrestaurants/${id}`, requestOptions)
+    fetch(
+      `https://my-server29-node.herokuapp.com/v1/editrestaurants/${id}`,
+      requestOptions
+    )
       .then((response) => response.json())
       .then((result: any) => {
         result.status && setOpen(true);
@@ -88,16 +91,20 @@ const Update = () => {
               </div>
 
               <div className="mb-3">
-                <label className="form-label" htmlFor="price">
-                  Price
-                </label>
-                <input
-                  onChange={(e) => setPrice(e.target.value)}
-                  className="form-control"
-                  type="text"
-                  id="price"
+                <select
                   value={price}
-                />
+                  onChange={(e) => setPrice(e.target.value)}
+                  className="form-select"
+                >
+                  <option defaultValue="true" disabled>
+                    Price Range
+                  </option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                  <option value="4">Four</option>
+                  <option value="5">Five</option>
+                </select>
               </div>
             </form>
             <button className="btn btn-primary" onClick={handleUpdate}>

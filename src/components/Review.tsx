@@ -6,7 +6,7 @@ const Review = () => {
   const { id }: any = useParams();
   useEffect(() => {
     const myFetch = () => {
-      fetch(`http://localhost:3000/v1/review/${id}`)
+      fetch(`https://my-server29-node.herokuapp.com/v1/review/${id}`)
         .then((res) => res.json())
         .then((result) => {
           setReview(result.data.rows);

@@ -25,7 +25,7 @@ const AddReview = () => {
       redirect: "follow",
     };
 
-    fetch(`http://localhost:3000/v1/review/${id}`, requestOptions)
+    fetch(`https://my-server29-node.herokuapp.com/v1/review/${id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setEmail("");
@@ -43,17 +43,17 @@ const AddReview = () => {
     <div>
       {open && (
         <div className="alert alert-info" role="alert">
-          A simple info alert—check it out!
+          We are so grateful. Thanks for sharing your review with the community.
         </div>
       )}
       <form className="row g-3">
         <div className="col-md-6">
           <label htmlFor="inputEmail4" className="form-label">
-            Email
+            Email or Phone
           </label>
           <input
             value={email}
-            type="email"
+            type="text"
             className="form-control"
             id="inputEmail4"
             onChange={(e) => setEmail(e.target.value)}
